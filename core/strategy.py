@@ -103,7 +103,7 @@ class GammaStrangleStrategy:
     def __init__(
         self,
         fyers: FyersClient,
-        capital: float = 500_000,
+        capital: float = 10_00_000,
         risk_pct: float = 2.0,
         num_lots: int = 1,
         telegram_fn=None,

@@ -325,7 +325,7 @@ def render_strategy_control_tab(strategy: Optional["GammaStrangleStrategy"]) -> 
         st.metric("Max Daily Loss", f"₹{max_loss:,.0f}")
     with col4:
         lots = getattr(strategy, "num_lots", 1)
-        st.metric("Lots", f"{lots} × 75 = {lots*75} qty")
+        st.metric("Lots", f"{lots} × 65 = {lots*65} qty")
 
     st.markdown("---")
 
