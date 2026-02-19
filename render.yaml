@@ -3,8 +3,9 @@ services:
     name: nifty-terminal
     env: python
     region: singapore
+    pythonVersion: "3.11.8"
     buildCommand: pip install -r requirements.txt
     startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true --server.enableCORS false --server.enableXsrfProtection false
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.8
+        value: "3.11.8"
