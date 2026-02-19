@@ -27,11 +27,19 @@ def _init_session() -> None:
 
 def get_credentials() -> dict:
     _init_session()
-    # Always inject hardcoded IDs so strategy builder can use them
-    from utils.fyers_login import FYERS_CLIENT_ID, FYERS_SECRET_KEY
+    # Inject all hardcoded credentials — nothing comes from UI inputs
+    from utils.fyers_login import (
+        FYERS_CLIENT_ID, FYERS_SECRET_KEY,
+        TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID,
+    )
     creds = st.session_state[SESSION_KEY]
-    creds["client_id"]  = FYERS_CLIENT_ID
-    creds["secret_key"] = FYERS_SECRET_KEY
+    creds["client_id"]        = FYERS_CLIENT_ID
+    creds["secret_key"]       = FYERS_SECRET_KEY
+    creds["telegram_token"]   = TELEGRAM_BOT_TOKEN
+    creds["telegram_chat_id"] = TELEGRAM_CHAT_ID
+    # Mark telegram active if credentials are set
+    if TELEGRAM_BOT_TOKEN and not TELEGRAM_BOT_TOKEN.startswith("X"):
+        creds["telegram_active"] = True
     return creds
 
 
@@ -78,7 +86,7 @@ def render_profile_tab() -> None:
     # ── TOTP — fully automatic ────────────────────────────────────────────────
     if otp_mode == "TOTP (Automatic)":
         st.info("🔄 Click the button — the app will log in automatically using your authenticator.")
-        if st.button("⚡ Initiate Session", type="primary", use_container_width=True):
+        if st.button("⚡ Initiate Session", type="primary", use_container_width=True, key="btn_initiate_session"):
             with st.spinner("Connecting to Fyers… (TOTP login, ~5 seconds)"):
                 try:
                     from utils.fyers_login import login_with_totp
@@ -106,7 +114,7 @@ def render_profile_tab() -> None:
         sms_step = st.session_state.get("sms_step", 1)
 
         if sms_step == 1:
-            if st.button("📲 Send OTP to Registered Mobile", type="primary", use_container_width=True):
+            if st.button("📲 Send OTP to Registered Mobile", type="primary", use_container_width=True, key="btn_send_sms_otp"):
                 with st.spinner("Sending OTP…"):
                     try:
                         from utils.fyers_login import send_sms_otp
@@ -115,7 +123,12 @@ def render_profile_tab() -> None:
                         ok, msg = False, str(e)
                 if ok:
                     st.session_state["sms_step"] = 2
-                    st.success("✅ OTP sent! Enter it below.")
+                    st.success("✅ OTP request sent!")
+                    st.warning(
+                        "⚠️ **Did not receive OTP?** Fyers headless API may not deliver SMS "
+                        "for all account types. If OTP doesn't arrive within 30 seconds, "
+                        "use **TOTP (Automatic)** method instead — it works without any SMS."
+                    )
                     st.rerun()
                 else:
                     st.error(f"❌ {msg}")
@@ -160,31 +173,15 @@ def render_profile_tab() -> None:
 
     st.markdown("---")
 
-    # ── Telegram config ───────────────────────────────────────────────────────
+    # ── Telegram status ───────────────────────────────────────────────────────
     st.markdown("### 📱 Telegram Alerts")
-    st.caption("Optional — receive trade alerts on Telegram.")
-
-    with st.form("telegram_form"):
-        tg_token = st.text_input(
-            "Bot Token",
-            value=creds.get("telegram_token", ""),
-            type="password",
-            placeholder="1234567890:AABBccDDee...",
-        )
-        tg_chat = st.text_input(
-            "Chat ID",
-            value=creds.get("telegram_chat_id", ""),
-            placeholder="-100xxxxxxxxxx",
-        )
-        save_tg = st.form_submit_button("💾 Save Telegram Settings", use_container_width=True)
-
-    if save_tg:
-        st.session_state[SESSION_KEY]["telegram_token"]   = tg_token.strip()
-        st.session_state[SESSION_KEY]["telegram_chat_id"] = tg_chat.strip()
-        st.success("✅ Telegram settings saved.")
-
-    if st.button("📤 Test Telegram Alert", use_container_width=True):
-        _test_telegram()
+    from utils.fyers_login import TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+    if TELEGRAM_BOT_TOKEN and not TELEGRAM_BOT_TOKEN.startswith("X"):
+        st.success(f"✅ Telegram configured. Chat ID: `{TELEGRAM_CHAT_ID}`")
+        if st.button("📤 Test Telegram Alert", use_container_width=True, key="btn_test_telegram"):
+            _test_telegram()
+    else:
+        st.warning("⚠️ Telegram not configured. Update TELEGRAM_BOT_TOKEN in utils/fyers_login.py")
 
     st.markdown("---")
 
@@ -194,7 +191,7 @@ def render_profile_tab() -> None:
 
     col1, col2 = st.columns([3, 1])
     with col1:
-        if st.button("⚡ Initialise Strategy", type="primary", use_container_width=True):
+        if st.button("⚡ Initialise Strategy", type="primary", use_container_width=True, key="btn_init_strategy_profile"):
             if not creds.get("access_token"):
                 st.error("❌ Initiate Fyers session first.")
             else:

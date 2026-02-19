@@ -290,3 +290,150 @@ ModuleNotFoundError: No module named 'scipy'
 2026-02-19 21:54:25 | INFO     | data.database | Database initialised at paper_trading.db
 2026-02-19 21:55:25 | INFO     | data.database | Database initialised at paper_trading.db
 2026-02-19 21:55:26 | INFO     | alerts.telegram | Telegram alert sent.
+2026-02-20 00:18:12 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:18:31 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:18:35 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:18:36 | INFO     | utils.fyers_login | send_login_otp → {'s': 'error', 'code': -1025, 'message': 'invalid request'}
+2026-02-20 00:18:39 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:18:40 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:18:40 | INFO     | utils.fyers_login | send_login_otp → {'s': 'error', 'code': -1025, 'message': 'invalid request'}
+2026-02-20 00:18:45 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:18:48 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:18:48 | INFO     | utils.fyers_login | send_login_otp → {'s': 'error', 'code': -1025, 'message': 'invalid request'}
+2026-02-20 00:18:57 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:18:59 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:18:59 | INFO     | utils.fyers_login | send_login_otp → {'s': 'error', 'code': -1025, 'message': 'invalid request'}
+2026-02-20 00:23:03 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:23:06 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:23:06 | INFO     | utils.fyers_login | send_login_otp → {'s': 'ok', 'code': 1043, 'message': 'otp has been successfully sent', 'mobile_no': '96xxxxxx46', 'email_id': 'goxxxxxxxxx10@xxxxx.com', 'request_key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOiIyIiwiY2xpZW50X25hbWUiOiJSQVZJQ0hBTkRSQU4gR09CSU5BVEgiLCJleHAiOjE3NzE1MjgwODYsImZ5X2lkIjoiWFIzMzQ4NyIsImlhdCI6MTc3MTUyNzE4NiwibmJmIjoxNzcxNTI3MTg2LCJyZXF1ZXN0X2tleSI6InhPc0NaQTU3ZWwxczBXVkkyVTJzWkxERmlvRXQ1cUN4c0N3NTFiTnlpUnBkQ3luQm9NIiwic3ViIjoidG90cF9sb2dpbiJ9.nXVr57jp1LwmjAxypuAwM6IHFHFUhtDmE4-V8WtlrP0', 'client_name': 'RAVICHANDRAN', 'nick_name': 'RAVICHANDRAN', 'pin_created': True, 'totp_enabled': True, 'avatar_link': '', 'biometric_enabled': False}
+2026-02-20 00:23:07 | INFO     | utils.fyers_login | Generated TOTP: 169555
+2026-02-20 00:23:07 | INFO     | utils.fyers_login | verify_totp → {'s': 'ok', 'code': 2, 'request_key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzE1MjcxODcsImV4cCI6MTc3MTYxMzU4NywibmJmIjoxNzcxNTI3MTg3LCJmeV9pZCI6IlhSMzM0ODciLCJyZXF1ZXN0X2tleSI6Ind6RXRkenNPUEQ0emZSZHFjTGNqTUY4bXZWVUp6Q3BZWXRBak1zZ1RKMnpHTUhFbGZSIn0.5WGgfFM2tgNzw0pSTLIPOz9b8IfX83fDesXDyeCoo-s', 'client_name': 'Ravichandran Gobinath', 'nick_name': 'Ravichandran', 'pin_created': True, 'message': 'fy_id and OTP verified successfully'}
+2026-02-20 00:23:08 | INFO     | utils.fyers_login | verify_pin → {'s': 'error', 'code': -1006, 'message': 'Invalid PIN', 'data': {}}
+2026-02-20 00:23:14 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:23:15 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:23:16 | INFO     | utils.fyers_login | send_login_otp → {'s': 'ok', 'code': 1043, 'message': 'otp has been successfully sent', 'mobile_no': '96xxxxxx46', 'email_id': 'goxxxxxxxxx10@xxxxx.com', 'request_key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOiIyIiwiY2xpZW50X25hbWUiOiJSQVZJQ0hBTkRSQU4gR09CSU5BVEgiLCJleHAiOjE3NzE1MjgwOTYsImZ5X2lkIjoiWFIzMzQ4NyIsImlhdCI6MTc3MTUyNzE5NiwibmJmIjoxNzcxNTI3MTk2LCJyZXF1ZXN0X2tleSI6InVKc3VyMkM0cEJIVldpTTdZZjd4YnE1NXJCUUpxTklWMkFDcjZKWmhLR1JzOUxKN0k5Iiwic3ViIjoidG90cF9sb2dpbiJ9.GhY6WYKQDYxW2_ozNs9o3U9pC7n0U31DwGxX34byZ8A', 'client_name': 'RAVICHANDRAN', 'nick_name': 'RAVICHANDRAN', 'pin_created': True, 'totp_enabled': True, 'avatar_link': '', 'biometric_enabled': False}
+2026-02-20 00:23:16 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:24:07 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:24:25 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:24:25 | INFO     | utils.fyers_login | send_login_otp → {'s': 'ok', 'code': 1043, 'message': 'otp has been successfully sent', 'mobile_no': '96xxxxxx46', 'email_id': 'goxxxxxxxxx10@xxxxx.com', 'request_key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOiIyIiwiY2xpZW50X25hbWUiOiJSQVZJQ0hBTkRSQU4gR09CSU5BVEgiLCJleHAiOjE3NzE1MjgxNjYsImZ5X2lkIjoiWFIzMzQ4NyIsImlhdCI6MTc3MTUyNzI2NiwibmJmIjoxNzcxNTI3MjY2LCJyZXF1ZXN0X2tleSI6Im1vU3V6THBWdEZtU3UwWGVPRVExaU1laktMUFlPTlBIYWZVSjU0M2ZHUVlwTTVhcE55Iiwic3ViIjoidG90cF9sb2dpbiJ9.JzD-Qx6JA4vJlwBp22lIXl_UQ-tOxLiipQZE0VqYFZ0', 'client_name': 'RAVICHANDRAN', 'nick_name': 'RAVICHANDRAN', 'pin_created': True, 'totp_enabled': True, 'avatar_link': '', 'biometric_enabled': False}
+2026-02-20 00:24:26 | INFO     | utils.fyers_login | Generated TOTP: 851716
+2026-02-20 00:24:27 | INFO     | utils.fyers_login | verify_totp → {'s': 'ok', 'code': 2, 'request_key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzE1MjcyNjcsImV4cCI6MTc3MTYxMzY2NywibmJmIjoxNzcxNTI3MjY3LCJmeV9pZCI6IlhSMzM0ODciLCJyZXF1ZXN0X2tleSI6ImJDZVhRY1ljdnBsTlJvSHRQS3NCaWpHNTNDd2xWbVc2UFVadlBYRWZwTktOSFlBbzhkIn0.rm4UjMsT9UmY1qrJRzic8Gugm-ibSiKoSEjlFs-HZ1s', 'client_name': 'Ravichandran Gobinath', 'nick_name': 'Ravichandran', 'pin_created': True, 'message': 'fy_id and OTP verified successfully'}
+2026-02-20 00:24:28 | INFO     | utils.fyers_login | verify_pin → {'s': 'error', 'code': -1006, 'message': 'Invalid PIN', 'data': {}}
+2026-02-20 00:24:50 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:24:53 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:24:53 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:24:57 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:24:57 | INFO     | utils.fyers_login | send_login_otp → {'s': 'ok', 'code': 1043, 'message': 'otp has been successfully sent', 'mobile_no': '96xxxxxx46', 'email_id': 'goxxxxxxxxx10@xxxxx.com', 'request_key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOiIyIiwiY2xpZW50X25hbWUiOiJSQVZJQ0hBTkRSQU4gR09CSU5BVEgiLCJleHAiOjE3NzE1MjgxOTcsImZ5X2lkIjoiWFIzMzQ4NyIsImlhdCI6MTc3MTUyNzI5NywibmJmIjoxNzcxNTI3Mjk3LCJyZXF1ZXN0X2tleSI6ImluNW1FVThNZXVTMjJhZ3dtVHdPUnloazV3ZnVnQ0JKOEdLblpQOVZqUmJaTW92SXQ2Iiwic3ViIjoidG90cF9sb2dpbiJ9.L15TmlRpruGcfmCyyzJNeEmLfgCmJlnG50-hf90sjjA', 'client_name': 'RAVICHANDRAN', 'nick_name': 'RAVICHANDRAN', 'pin_created': True, 'totp_enabled': True, 'avatar_link': '', 'biometric_enabled': False}
+2026-02-20 00:24:57 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:32:46 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:32:48 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:32:48 | INFO     | utils.fyers_login | send_login_otp → {'s': 'ok', 'code': 1043, 'message': 'otp has been successfully sent', 'mobile_no': '96xxxxxx46', 'email_id': 'goxxxxxxxxx10@xxxxx.com', 'request_key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOiIyIiwiY2xpZW50X25hbWUiOiJSQVZJQ0hBTkRSQU4gR09CSU5BVEgiLCJleHAiOjE3NzE1Mjg2NjksImZ5X2lkIjoiWFIzMzQ4NyIsImlhdCI6MTc3MTUyNzc2OSwibmJmIjoxNzcxNTI3NzY5LCJyZXF1ZXN0X2tleSI6ImNTS3R5NWQySUNuR2xHUzRGMU4zS3Q4SG5hZGpGcFd4WUM5aXRPakQzYjJWSFZUVG1sIiwic3ViIjoidG90cF9sb2dpbiJ9.OBN92LnF3micv9Q7ycknu7W29XXXPUyfSS5QDLz97Pk', 'client_name': 'RAVICHANDRAN', 'nick_name': 'RAVICHANDRAN', 'pin_created': True, 'totp_enabled': True, 'avatar_link': '', 'biometric_enabled': False}
+2026-02-20 00:32:49 | INFO     | utils.fyers_login | Generated TOTP: 424478
+2026-02-20 00:32:50 | INFO     | utils.fyers_login | verify_totp → {'s': 'ok', 'code': 2, 'request_key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzE1Mjc3NzAsImV4cCI6MTc3MTYxNDE3MCwibmJmIjoxNzcxNTI3NzcwLCJmeV9pZCI6IlhSMzM0ODciLCJyZXF1ZXN0X2tleSI6ImpJWUlEQWpGT013SHJVc1A3ajByMlR0eUFydkhGemd0d1ZrR2lSazhjbFBkM0t1a0hQIn0.DnPmG2-zI_pfb35njdi25kNF2ui_RMdkd03ynwUPSSs', 'client_name': 'Ravichandran Gobinath', 'nick_name': 'Ravichandran', 'pin_created': True, 'message': 'fy_id and OTP verified successfully'}
+2026-02-20 00:32:51 | INFO     | utils.fyers_login | verify_pin → {'s': 'error', 'code': -1006, 'message': 'Invalid PIN', 'data': {}}
+2026-02-20 00:32:56 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:33:00 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:33:01 | INFO     | utils.fyers_login | send_login_otp → {'s': 'ok', 'code': 1043, 'message': 'otp has been successfully sent', 'mobile_no': '96xxxxxx46', 'email_id': 'goxxxxxxxxx10@xxxxx.com', 'request_key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOiIyIiwiY2xpZW50X25hbWUiOiJSQVZJQ0hBTkRSQU4gR09CSU5BVEgiLCJleHAiOjE3NzE1Mjg2ODEsImZ5X2lkIjoiWFIzMzQ4NyIsImlhdCI6MTc3MTUyNzc4MSwibmJmIjoxNzcxNTI3NzgxLCJyZXF1ZXN0X2tleSI6IlpiUlRzdW54Zk5GUlF1WHZHZGROR0l1bEV6VkwyUU8wdmRzdVdZc3BtNThtYWgzSjZRIiwic3ViIjoidG90cF9sb2dpbiJ9.Nz2s9dWldZ8V7Q1XC92Y2xW3JlQYRx8UUJjTkirMgtk', 'client_name': 'RAVICHANDRAN', 'nick_name': 'RAVICHANDRAN', 'pin_created': True, 'totp_enabled': True, 'avatar_link': '', 'biometric_enabled': False}
+2026-02-20 00:33:01 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:33:38 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:33:39 | INFO     | utils.fyers_login | verify_sms_otp → {'s': 'error', 'code': -1063, 'otp_retries': 0, 'failed_attempts': 1, 'user_blocked': False, 'message': 'invalid totp, 4 attempts left'}
+2026-02-20 00:33:48 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:33:48 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:33:50 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:33:50 | INFO     | utils.fyers_login | send_login_otp → {'s': 'ok', 'code': 1043, 'message': 'otp has been successfully sent', 'mobile_no': '96xxxxxx46', 'email_id': 'goxxxxxxxxx10@xxxxx.com', 'request_key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOiIyIiwiY2xpZW50X25hbWUiOiJSQVZJQ0hBTkRSQU4gR09CSU5BVEgiLCJleHAiOjE3NzE1Mjg3MzAsImZ5X2lkIjoiWFIzMzQ4NyIsImlhdCI6MTc3MTUyNzgzMCwibmJmIjoxNzcxNTI3ODMwLCJyZXF1ZXN0X2tleSI6InE0UkpHVE5BdWdiODRVNW5zOEc0UXlseFV5THhLelA1OWtXcTNsMlduVGh4dmNnUVkxIiwic3ViIjoidG90cF9sb2dpbiJ9.qPUU0oaAsgKCpDNOJ8kIgtntxQfaKh7vVG-x3ZJ1UC4', 'client_name': 'RAVICHANDRAN', 'nick_name': 'RAVICHANDRAN', 'pin_created': True, 'totp_enabled': True, 'avatar_link': '', 'biometric_enabled': False}
+2026-02-20 00:33:50 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:34:04 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:34:05 | INFO     | alerts.telegram | Telegram alert sent.
+2026-02-20 00:34:25 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:34:26 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:34:26 | INFO     | utils.fyers_login | send_login_otp → {'s': 'ok', 'code': 1043, 'message': 'otp has been successfully sent', 'mobile_no': '96xxxxxx46', 'email_id': 'goxxxxxxxxx10@xxxxx.com', 'request_key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOiIyIiwiY2xpZW50X25hbWUiOiJSQVZJQ0hBTkRSQU4gR09CSU5BVEgiLCJleHAiOjE3NzE1Mjg3NjYsImZ5X2lkIjoiWFIzMzQ4NyIsImlhdCI6MTc3MTUyNzg2NiwibmJmIjoxNzcxNTI3ODY2LCJyZXF1ZXN0X2tleSI6InBUR2ZYdnh3VmxkZjZDaGtKVVUzOVllSElIa1hTZGt2ODdWcFUxWkw2cE1mYlEwWUw0Iiwic3ViIjoidG90cF9sb2dpbiJ9.Y_YYQueK8ybjvo3T-Qc6FhuWoAJ7gk-MV6SBOVI4mAs', 'client_name': 'RAVICHANDRAN', 'nick_name': 'RAVICHANDRAN', 'pin_created': True, 'totp_enabled': True, 'avatar_link': '', 'biometric_enabled': False}
+2026-02-20 00:34:27 | INFO     | utils.fyers_login | Generated TOTP: 932432
+2026-02-20 00:34:27 | INFO     | utils.fyers_login | verify_totp → {'s': 'ok', 'code': 2, 'request_key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzE1Mjc4NjcsImV4cCI6MTc3MTYxNDI2NywibmJmIjoxNzcxNTI3ODY3LCJmeV9pZCI6IlhSMzM0ODciLCJyZXF1ZXN0X2tleSI6IkVYb01xcXh4dEQ3OFFSclBadXJGZ3g3eHNhTERWQ1pTM3JWdUtWR00wcjZ2MmxiUFdRIn0.TdoQ8Vao2lL__3h-3dBmv93xiTrArHV0EOocavMsf-M', 'client_name': 'Ravichandran Gobinath', 'nick_name': 'Ravichandran', 'pin_created': True, 'message': 'fy_id and OTP verified successfully'}
+2026-02-20 00:34:28 | INFO     | utils.fyers_login | verify_pin → {'s': 'error', 'code': -1006, 'message': 'Invalid PIN', 'data': {}}
+2026-02-20 00:37:03 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:37:05 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:37:05 | INFO     | utils.fyers_login | === Fyers TOTP Login Start ===
+2026-02-20 00:37:06 | INFO     | utils.fyers_login | send_login_otp → code=1043 msg=otp has been successfully sent
+2026-02-20 00:37:13 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:37:14 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:37:14 | INFO     | utils.fyers_login | send_login_otp → code=1043 msg=otp has been successfully sent
+2026-02-20 00:40:50 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:40:56 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:40:56 | INFO     | utils.fyers_login | === Fyers TOTP Login Start ===
+2026-02-20 00:40:56 | INFO     | utils.fyers_login | send_login_otp → code=1043 msg=otp has been successfully sent
+2026-02-20 00:40:56 | INFO     | utils.fyers_login | Generated TOTP: 316269
+2026-02-20 00:40:57 | INFO     | utils.fyers_login | verify_otp (TOTP) → code=2 msg=fy_id and OTP verified successfully
+2026-02-20 00:40:57 | INFO     | utils.fyers_login | verify_pin → code=1004 msg=pin is Verified
+2026-02-20 00:40:58 | INFO     | utils.fyers_login | token step → code=ok
+2026-02-20 00:41:17 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:41:18 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:41:18 | INFO     | utils.fyers_login | send_login_otp → code=1043 msg=otp has been successfully sent
+2026-02-20 00:41:20 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:41:24 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:41:24 | INFO     | utils.fyers_login | === Fyers TOTP Login Start ===
+2026-02-20 00:41:24 | INFO     | utils.fyers_login | send_login_otp → code=1043 msg=otp has been successfully sent
+2026-02-20 00:41:24 | INFO     | utils.fyers_login | Generated TOTP: 902989
+2026-02-20 00:41:24 | INFO     | utils.fyers_login | verify_otp (TOTP) → code=2 msg=fy_id and OTP verified successfully
+2026-02-20 00:41:25 | INFO     | utils.fyers_login | verify_pin → code=1004 msg=pin is Verified
+2026-02-20 00:41:25 | INFO     | utils.fyers_login | token step → code=ok
+2026-02-20 00:41:48 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:45:25 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:45:27 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:45:27 | INFO     | utils.fyers_login | === Fyers TOTP Login Start ===
+2026-02-20 00:45:27 | INFO     | utils.fyers_login | send_login_otp → code=1043 msg=otp has been successfully sent
+2026-02-20 00:45:27 | INFO     | utils.fyers_login | Generated TOTP: 957226
+2026-02-20 00:45:27 | INFO     | utils.fyers_login | verify_otp (TOTP) → code=2 msg=fy_id and OTP verified successfully
+2026-02-20 00:45:28 | INFO     | utils.fyers_login | verify_pin → code=1004 msg=pin is Verified
+2026-02-20 00:45:28 | INFO     | utils.fyers_login | token step → s=ok
+2026-02-20 00:45:28 | INFO     | utils.fyers_login | Got access token from data.auth
+2026-02-20 00:45:28 | INFO     | utils.fyers_login | validate_authcode → s=error
+2026-02-20 00:45:33 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:45:34 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:45:35 | INFO     | utils.fyers_login | send_login_otp → code=1043 msg=otp has been successfully sent
+2026-02-20 00:46:13 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:46:14 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:46:15 | INFO     | utils.fyers_login | send_login_otp → code=1043 msg=otp has been successfully sent
+2026-02-20 00:49:33 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:49:37 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:49:37 | INFO     | utils.fyers_login | === Fyers TOTP Login ===
+2026-02-20 00:49:37 | INFO     | utils.fyers_login | send_login_otp → code=1043 msg=otp has been successfully sent
+2026-02-20 00:49:37 | INFO     | utils.fyers_login | Step 1 OK — request_key obtained
+2026-02-20 00:49:37 | INFO     | utils.fyers_login | TOTP code: 129656
+2026-02-20 00:49:38 | INFO     | utils.fyers_login | verify_otp (TOTP) → code=2 msg=fy_id and OTP verified successfully
+2026-02-20 00:49:38 | INFO     | utils.fyers_login | Step 2 OK — TOTP verified
+2026-02-20 00:49:38 | INFO     | utils.fyers_login | verify_pin → code=1004 msg=pin is Verified
+2026-02-20 00:49:38 | INFO     | utils.fyers_login | Step 3 OK — PIN verified, trade token obtained
+2026-02-20 00:49:39 | INFO     | utils.fyers_login | token → s=ok keys=['appName', 'app_id', 'auth', 'image', 'nonce', 'permissions', 'redirectUrl', 'response_type', 'scope', 'state', 'user_id']
+2026-02-20 00:49:39 | INFO     | utils.fyers_login | Final access token obtained from data.auth ✅
+2026-02-20 00:49:39 | INFO     | utils.fyers_login | === Login SUCCESS ===
+2026-02-20 00:49:39 | INFO     | ui.profile_tab | Fyers login successful via TOTP.
+2026-02-20 00:49:39 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:49:47 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:49:50 | INFO     | core.scheduler | Scheduled jobs registered.
+2026-02-20 00:49:50 | INFO     | core.scheduler | TradingScheduler started.
+2026-02-20 00:49:56 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:49:56 | INFO     | core.strategy | [PAPER] Strategy started.
+2026-02-20 00:49:57 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:51:38 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:51:46 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:44 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:45 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:45 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:45 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:45 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:46 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:46 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:47 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:47 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:47 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:48 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:48 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:49 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:49 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:49 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:50 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:50 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:51 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:55:51 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:56:50 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-20 00:57:23 | INFO     | data.database | Database initialised at paper_trading.db

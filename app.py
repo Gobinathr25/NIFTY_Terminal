@@ -1,5 +1,5 @@
 """
-NIFTY Options Paper Trading Terminal
+NIFTY Options Trading Terminal
 Main Streamlit Application Entry Point
 
 PAPER_MODE = True | No real orders are ever placed.
@@ -35,7 +35,7 @@ if PAPER_MODE:
 
 init_db()
 
-for _k, _v in [("strategy", None), ("scheduler", None), ("capital", 500_000), ("risk_pct", 2.0), ("max_trades_day", 2), ("num_lots", 1)]:
+for _k, _v in [("strategy", None), ("scheduler", None), ("capital", 10_00_000), ("risk_pct", 1.0), ("max_trades_day", 2), ("num_lots", 1)]:
     if _k not in st.session_state:
         st.session_state[_k] = _v
 
@@ -104,7 +104,7 @@ with st.sidebar:
     st.markdown("## ⚙️ Trading Parameters")
     st.markdown("---")
 
-    capital = st.number_input("💰 Capital (₹)", min_value=100_000, max_value=10_000_000,
+    capital = st.number_input("💰 Capital (₹)", min_value=100_000, max_value=10_000_0000,
                                value=int(st.session_state["capital"]), step=50_000, format="%d")
     st.session_state["capital"] = capital
 
@@ -133,7 +133,7 @@ with st.sidebar:
         st.warning("🔴 Not initialised\nGo to Profile tab ↓")
 
     st.markdown("---")
-    if st.button("🔄 Reinitialise Strategy", use_container_width=True):
+    if st.button("🔄 Reinitialise Strategy", use_container_width=True, key="btn_reinit_sidebar"):
         st.session_state["strategy"] = None
         strat, msg = _build_strategy()
         if strat:
@@ -175,28 +175,7 @@ with tab_profile:
     from ui.profile_tab import render_profile_tab
     render_profile_tab()
 
-    st.markdown("---")
-    st.markdown("### 🚀 Step 2 — Initialise Strategy Engine")
-    st.caption("After saving credentials above, click this button to start the engine.")
 
-    col1, col2 = st.columns([3, 1])
-    with col1:
-        if st.button("⚡ Initialise Strategy", type="primary", use_container_width=True):
-            with st.spinner("Building strategy engine…"):
-                strat, msg = _build_strategy()
-            if strat:
-                strat.capital = st.session_state["capital"]
-                strat.risk_pct = st.session_state["risk_pct"]
-                st.session_state["strategy"] = strat
-                st.success(msg)
-                st.info("✅ Now go to **🎛️ Strategy Control** tab → click **Start Strategy**.")
-            else:
-                st.error(msg)
-    with col2:
-        if st.session_state["strategy"] is not None:
-            st.success("✅ Ready")
-        else:
-            st.warning("⚠️ Not init")
 
 with tab_live:
     from ui.live_terminal_tab import render_live_terminal_tab

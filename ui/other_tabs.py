@@ -255,21 +255,21 @@ def render_strategy_control_tab(strategy: Optional["GammaStrangleStrategy"]) -> 
 
     with col1:
         st.markdown("### ▶️ Start")
-        if st.button("🟢 Start Strategy", use_container_width=True, type="primary"):
+        if st.button("🟢 Start Strategy", use_container_width=True, type="primary", key="btn_start_strategy"):
             strategy.start()
             st.success("Strategy started!")
             st.rerun()
 
     with col2:
         st.markdown("### ⏹️ Stop")
-        if st.button("🔴 Stop Strategy", use_container_width=True):
+        if st.button("🔴 Stop Strategy", use_container_width=True, key="btn_stop_strategy"):
             strategy.stop()
             st.warning("Strategy stopped. Existing positions remain open.")
             st.rerun()
 
     with col3:
         st.markdown("### 🔁 Reset")
-        if st.button("⚠️ Reset Day", use_container_width=True):
+        if st.button("⚠️ Reset Day", use_container_width=True, key="btn_reset_day"):
             if st.session_state.get("confirm_reset"):
                 strategy.reset_day()
                 st.session_state["confirm_reset"] = False
@@ -291,7 +291,7 @@ def render_strategy_control_tab(strategy: Optional["GammaStrangleStrategy"]) -> 
             ["GAMMA_STRANGLE", "EXPIRY"],
             help="GAMMA_STRANGLE = regular. EXPIRY = after 9:45 ATM+100 version."
         )
-        if st.button("📥 Force New Entry", use_container_width=True):
+        if st.button("📥 Force New Entry", use_container_width=True, key="btn_force_entry"):
             trade_id = strategy.open_position(strategy_type=strategy_type)
             if trade_id:
                 st.success(f"✅ Paper trade opened! Trade ID: {trade_id}")
@@ -304,7 +304,7 @@ def render_strategy_control_tab(strategy: Optional["GammaStrangleStrategy"]) -> 
             trade_ids = [str(t["id"]) for t in open_trades]
             selected = st.selectbox("Select Trade to Close", trade_ids)
             close_reason = st.text_input("Close Reason", value="MANUAL")
-            if st.button("📤 Force Close Trade", use_container_width=True):
+            if st.button("📤 Force Close Trade", use_container_width=True, key="btn_force_close"):
                 pnl = strategy.close_position(int(selected), reason=close_reason)
                 st.success(f"Trade {selected} closed. P&L: ₹{pnl:+.0f}")
                 st.rerun()
@@ -339,7 +339,7 @@ def render_strategy_control_tab(strategy: Optional["GammaStrangleStrategy"]) -> 
 
     col_refresh, col_lots_info = st.columns([1, 3])
     with col_refresh:
-        fetch_margin = st.button("🔄 Fetch Margin from Fyers", use_container_width=True)
+        fetch_margin = st.button("🔄 Fetch Margin from Fyers", use_container_width=True, key="btn_fetch_margin")
     with col_lots_info:
         lots = getattr(strategy, "num_lots", 1)
         qty  = lots * 65
