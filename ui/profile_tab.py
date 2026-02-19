@@ -36,6 +36,50 @@ def get_credentials() -> dict:
     return st.session_state[SESSION_KEY]
 
 
+
+def _do_full_totp_login(creds: dict) -> None:
+    """Complete full login flow using TOTP (no SMS OTP step needed)."""
+    import streamlit as st
+    from utils.fyers_login import (
+        step1_send_login_otp, step2b_verify_totp,
+        step3_verify_pin, step4_get_access_token
+    )
+
+    fy_id       = st.session_state.get("login_fy_id", "")
+    pin         = st.session_state.get("login_pin", "")
+    totp_secret = st.session_state.get("login_totp_secret", "")
+
+    # Step 1: initiate login
+    ok, request_key = step1_send_login_otp(fy_id, creds["client_id"])
+    if not ok:
+        st.error(f"❌ Login initiation failed: {request_key}")
+        return
+
+    # Step 2: verify TOTP
+    ok2, rk2 = step2b_verify_totp(request_key, totp_secret)
+    if not ok2:
+        st.error(f"❌ TOTP verification failed: {rk2}")
+        return
+
+    # Step 3: verify PIN
+    ok3, auth_code = step3_verify_pin(rk2, pin)
+    if not ok3:
+        st.error(f"❌ PIN verification failed: {auth_code}")
+        return
+
+    # Step 4: get token
+    ok4, token = step4_get_access_token(creds["client_id"], creds["secret_key"], auth_code)
+    if ok4 and token:
+        st.session_state[SESSION_KEY]["access_token"] = token
+        st.session_state[SESSION_KEY]["fyers_connected"] = True
+        st.session_state["login_step"] = 1
+        st.success("✅ TOTP Login successful! Access token obtained.")
+        st.info("Click **⚡ Initialise Strategy** below to start.")
+        st.rerun()
+    else:
+        st.error(f"❌ Token generation failed: {token}")
+
+
 def render_profile_tab() -> None:
     _init_session()
     creds = st.session_state[SESSION_KEY]
@@ -109,96 +153,121 @@ def render_profile_tab() -> None:
 
     st.markdown("---")
 
-    # ── OAuth2 flow ──────────────────────────────────────────────────────────
-    st.markdown("### 🔐 Fyers OAuth2 Authentication")
+    # ── Headless Login Flow ───────────────────────────────────────────────────
+    st.markdown("### 🔐 Fyers Login")
+    st.info(
+        "Enter your Fyers credentials below. The app will handle the full login "
+        "automatically — no browser redirect or copy-pasting needed. "
+        "Works on both local and Render deployments."
+    )
 
     if not (creds.get("client_id") and creds.get("secret_key")):
         st.warning("⚠️ Save your Fyers Client ID and Secret Key first (Step 1 above).")
     else:
-        # ── Method A: Auto (local app only) ──────────────────────────────────
-        st.markdown("#### Option A — Auto Login (Recommended for local desktop)")
-        st.info(
-"Automatically opens your browser, logs you in via Fyers, "
-            "and captures the token — no copy-pasting needed.\n\n"
-            "This only works when running the app locally on your computer "
-            "(not on Render/cloud). Your Fyers app Redirect URL must be set to:\n\n"
-            "`http://127.0.0.1:8085/callback`"
-        )
-        col1, col2 = st.columns([2, 1])
-        with col1:
-            if st.button("🚀 Auto Login (opens browser)", use_container_width=True, type="primary"):
-                with st.spinner("Waiting for Fyers login… (browser should open)"):
-                    try:
-                        from utils.auth_server import run_local_auth_flow
-                        token = run_local_auth_flow(
-                            creds["client_id"].strip(),
-                            creds["secret_key"].strip(),
-                        )
-                        if token:
-                            st.session_state[SESSION_KEY]["access_token"] = token
-                            st.session_state[SESSION_KEY]["fyers_connected"] = True
-                            st.success("✅ Access token obtained automatically!")
+        # ── Login form ────────────────────────────────────────────────────────
+        login_step = st.session_state.get("login_step", 1)
+
+        # ── Step 1: Fyers ID + PIN + OTP method ──────────────────────────────
+        if login_step == 1:
+            st.markdown("#### Step 1 — Enter Credentials")
+            with st.form("fyers_login_form"):
+                fy_id    = st.text_input("Fyers Client ID / User ID",
+                                          value=creds.get("client_id",""),
+                                          help="Your Fyers login ID e.g. XY12345")
+                pin      = st.text_input("4-digit PIN", type="password",
+                                          placeholder="Your Fyers trading PIN",
+                                          help="The 4-digit PIN you use to log in to Fyers")
+                otp_mode = st.radio("OTP Method", ["SMS / Email OTP", "TOTP (Google Authenticator)"],
+                                     horizontal=True)
+                totp_secret = ""
+                if otp_mode == "TOTP (Google Authenticator)":
+                    totp_secret = st.text_input(
+                        "TOTP Secret Key",
+                        type="password",
+                        placeholder="Base32 secret from Fyers 2FA setup",
+                        help="Found in Fyers app → Security → 2FA setup → show secret key",
+                    )
+
+                send_otp = st.form_submit_button("📲 Send OTP & Continue", type="primary",
+                                                  use_container_width=True)
+
+            if send_otp:
+                if not fy_id or not pin:
+                    st.error("❌ Fyers User ID and PIN are required.")
+                else:
+                    # Store for later steps
+                    st.session_state["login_fy_id"]      = fy_id.strip()
+                    st.session_state["login_pin"]        = pin.strip()
+                    st.session_state["login_otp_mode"]   = otp_mode
+                    st.session_state["login_totp_secret"]= totp_secret.strip()
+
+                    if otp_mode == "TOTP (Google Authenticator)":
+                        if not totp_secret:
+                            st.error("❌ TOTP secret is required for authenticator login.")
+                        else:
+                            # With TOTP we can complete the whole flow now
+                            with st.spinner("Logging in with TOTP…"):
+                                _do_full_totp_login(creds)
+                    else:
+                        # SMS OTP — send it first
+                        with st.spinner("Sending OTP to your registered mobile…"):
+                            from utils.fyers_login import step1_send_login_otp
+                            ok, result = step1_send_login_otp(
+                                fy_id.strip(), creds["client_id"].strip()
+                            )
+                        if ok:
+                            st.session_state["login_request_key"] = result
+                            st.session_state["login_step"] = 2
+                            st.success("✅ OTP sent to your registered mobile/email!")
                             st.rerun()
                         else:
-                            st.error("❌ Login timed out or failed. Try Manual Login below.")
-                    except Exception as e:
-                        st.error(f"❌ Auto login error: {e}")
-        with col2:
-            st.caption("Timeout: 3 minutes")
+                            st.error(f"❌ Failed to send OTP: {result}")
 
-        st.markdown("---")
+        # ── Step 2: Enter OTP ─────────────────────────────────────────────────
+        elif login_step == 2:
+            st.markdown("#### Step 2 — Enter OTP")
+            st.info("OTP sent to your registered mobile/email. Enter it below.")
+            with st.form("otp_form"):
+                otp = st.text_input("Enter OTP", placeholder="6-digit OTP",
+                                     max_chars=6)
+                verify = st.form_submit_button("✅ Verify OTP & Login", type="primary",
+                                               use_container_width=True)
+                back   = st.form_submit_button("← Back")
 
-        # ── Method B: Manual (works everywhere including Render) ─────────────
-        st.markdown("#### Option B — Manual Login (Works on Render / cloud)")
-        st.caption(
-            "Use this when deploying on Render or any cloud server. "
-            "Set your Fyers app Redirect URL to any URL (e.g. `https://trade.fyers.in`), "
-            "log in, then copy the `auth_code` value from the browser address bar."
-        )
+            if back:
+                st.session_state["login_step"] = 1
+                st.rerun()
 
-        col1, col2 = st.columns(2)
-        with col1:
-            redirect_for_manual = st.text_input(
-                "Redirect URL (for manual flow)",
-                value=creds.get("redirect_url", "https://trade.fyers.in"),
-                key="manual_redirect_url",
-                help="Set this same URL in your Fyers API portal",
-            )
-            if st.button("🔗 Generate Login URL", use_container_width=True):
-                from data.fyers_client import FyersClient
-                url = FyersClient.generate_auth_url(
-                    creds["client_id"], redirect_for_manual, creds["secret_key"]
-                )
-                st.session_state["manual_auth_url"] = url
-
-            if st.session_state.get("manual_auth_url"):
-                url = st.session_state["manual_auth_url"]
-                st.markdown(f"**[👉 Click to Open Fyers Login]({url})**")
-                st.caption("After login, copy the `auth_code=XXXXXX` from the redirected URL.")
-
-        with col2:
-            auth_code = st.text_input(
-                "Paste auth_code here",
-                placeholder="e.g. eyJ0eXAiOiJKV1QiLCJhbGc...",
-                key="auth_code_input",
-                help="Copy the value after auth_code= in the browser URL bar after login",
-            )
-            if st.button("🔄 Exchange for Token", use_container_width=True):
-                if auth_code.strip():
-                    with st.spinner("Exchanging auth code…"):
-                        from data.fyers_client import FyersClient
-                        token = FyersClient.exchange_auth_code(
-                            creds["client_id"], creds["secret_key"], auth_code.strip()
-                        )
-                    if token:
-                        st.session_state[SESSION_KEY]["access_token"] = token
-                        st.session_state[SESSION_KEY]["fyers_connected"] = True
-                        st.success("✅ Access token obtained!")
-                        st.rerun()
-                    else:
-                        st.error("❌ Token exchange failed. Check credentials and auth code.")
+            if verify:
+                if not otp.strip():
+                    st.error("Enter the OTP.")
                 else:
-                    st.warning("Paste the auth_code first.")
+                    request_key = st.session_state.get("login_request_key","")
+                    pin         = st.session_state.get("login_pin","")
+                    with st.spinner("Verifying OTP…"):
+                        from utils.fyers_login import step2_verify_otp, step3_verify_pin, step4_get_access_token
+                        ok, rk2 = step2_verify_otp(request_key, otp.strip())
+                    if not ok:
+                        st.error(f"❌ OTP verification failed: {rk2}")
+                    else:
+                        with st.spinner("Verifying PIN…"):
+                            ok2, auth_code = step3_verify_pin(rk2, pin)
+                        if not ok2:
+                            st.error(f"❌ PIN verification failed: {auth_code}")
+                        else:
+                            with st.spinner("Getting access token…"):
+                                ok3, token = step4_get_access_token(
+                                    creds["client_id"], creds["secret_key"], auth_code
+                                )
+                            if ok3 and token:
+                                st.session_state[SESSION_KEY]["access_token"] = token
+                                st.session_state[SESSION_KEY]["fyers_connected"] = True
+                                st.session_state["login_step"] = 1
+                                st.success("✅ Login successful! Access token obtained.")
+                                st.info("Click **⚡ Initialise Strategy** below to start.")
+                                st.rerun()
+                            else:
+                                st.error(f"❌ Token generation failed: {token}")
 
     st.markdown("---")
 
