@@ -46,7 +46,7 @@ from utils.logger import get_logger
 log = get_logger(__name__)
 
 # ─── CONSTANTS ────────────────────────────────────────────────────────────────
-NIFTY_LOT_SIZE = 75
+NIFTY_LOT_SIZE = 65
 STRIKE_STEP = 50
 
 
