@@ -1,0 +1,292 @@
+2026-02-19 21:00:33 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:08:12 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:08:23 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:08:25 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:08:39 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:08:45 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:10:37 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:10:37 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:10:53 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:10:53 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:11:17 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:11:17 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:13:00 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:13:00 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:13:18 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:13:18 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:13:27 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:14:13 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:14:13 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:14:20 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:14:21 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:14:35 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:14:35 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:14:36 | ERROR    | alerts.telegram | Telegram error: {'ok': False, 'error_code': 400, 'description': 'Bad Request: chat not found'}
+2026-02-19 21:22:51 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:22:51 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:22:51 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:22:55 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:22:55 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:22:56 | ERROR    | alerts.telegram | Telegram error: {'ok': False, 'error_code': 400, 'description': 'Bad Request: chat not found'}
+2026-02-19 21:22:58 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:22:58 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:22:59 | ERROR    | alerts.telegram | Telegram error: {'ok': False, 'error_code': 400, 'description': 'Bad Request: chat not found'}
+2026-02-19 21:23:07 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:23:07 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:23:07 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:23:08 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:23:08 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:23:08 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:23:10 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:23:10 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:23:12 | ERROR    | alerts.telegram | Telegram error: {'ok': False, 'error_code': 400, 'description': 'Bad Request: chat not found'}
+2026-02-19 21:23:32 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:23:32 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:23:32 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:23:33 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:23:33 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:23:33 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:23:36 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:23:36 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:23:37 | INFO     | alerts.telegram | Telegram alert sent.
+2026-02-19 21:24:19 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:24:19 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:24:19 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:24:49 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:24:49 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:24:52 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:24:52 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:24:52 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:24:59 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:24:59 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:24:59 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:25:10 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:25:10 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:25:10 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:26:33 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:26:33 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:26:33 | ERROR    | app | Strategy build error: No module named 'scipy'
+Traceback (most recent call last):
+  File "C:\nifty_terminal\app.py", line 64, in _build_strategy
+    from core.strategy import GammaStrangleStrategy
+  File "C:\nifty_terminal\core\strategy.py", line 33, in <module>
+    from core.indicators import (
+  File "C:\nifty_terminal\core\indicators.py", line 10, in <module>
+    from scipy.stats import norm
+ModuleNotFoundError: No module named 'scipy'
+2026-02-19 21:45:22 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:47:53 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:48:03 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:48:07 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:48:32 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:48:32 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:48:34 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:48:34 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:48:44 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:48:44 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:49:04 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:49:04 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:49:27 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:49:27 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:49:31 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:49:31 | INFO     | utils.auth_server | Opening browser for Fyers login: https://api-t1.fyers.in/api/v3/generate-authcode?client_id=KS5VRSP9RF-100&redirect_uri=http://127.0.0.1:8085/callback&response_type=code&state=sample_state
+2026-02-19 21:49:32 | INFO     | utils.auth_server | Local auth server started on http://127.0.0.1:8085/callback
+2026-02-19 21:50:01 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:50:01 | INFO     | utils.auth_server | Opening browser for Fyers login: https://api-t1.fyers.in/api/v3/generate-authcode?client_id=KS5VRSP9RF-100&redirect_uri=http://127.0.0.1:8085/callback&response_type=code&state=sample_state
+2026-02-19 21:50:01 | INFO     | utils.auth_server | Local auth server started on http://127.0.0.1:8085/callback
+2026-02-19 21:51:33 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:51:33 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:51:34 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:51:34 | INFO     | ui.profile_tab | Credentials updated in session state.
+2026-02-19 21:51:36 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:51:36 | INFO     | utils.auth_server | Opening browser for Fyers login: https://api-t1.fyers.in/api/v3/generate-authcode?client_id=KS5VRSP9RF-100&redirect_uri=http://127.0.0.1:8085/callback&response_type=code&state=sample_state
+2026-02-19 21:51:36 | INFO     | utils.auth_server | Local auth server started on http://127.0.0.1:8085/callback
+2026-02-19 21:51:39 | INFO     | utils.auth_server | Auth code captured automatically.
+2026-02-19 21:51:40 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:51:54 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:51:54 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:51:54 | ERROR    | data.fyers_client | Token exchange failed: {'code': -437, 'message': 'invalid auth code', 's': 'error'}
+2026-02-19 21:52:00 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:52:02 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:52:02 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:52:05 | INFO     | utils.auth_server | Auth code captured automatically.
+2026-02-19 21:52:27 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:52:27 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:52:27 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:52:37 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:52:38 | INFO     | alerts.telegram | Telegram alert sent.
+2026-02-19 21:52:52 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:53:00 | INFO     | core.scheduler | Scheduled jobs registered.
+2026-02-19 21:53:00 | INFO     | core.scheduler | TradingScheduler started.
+2026-02-19 21:53:25 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:53:25 | WARNING  | core.strategy | Margin API call failed: 400 Client Error: Bad Request for url: https://api-t1.fyers.in/api/v3/margin
+2026-02-19 21:53:40 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:53:43 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:54:05 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:54:08 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:54:20 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:54:20 | INFO     | core.strategy | [PAPER] Strategy started.
+2026-02-19 21:54:20 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:54:25 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:55:25 | INFO     | data.database | Database initialised at paper_trading.db
+2026-02-19 21:55:26 | INFO     | alerts.telegram | Telegram alert sent.
